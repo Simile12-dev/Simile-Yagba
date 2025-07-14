@@ -9,21 +9,37 @@ const Projects = () => {
       id: 1,
       title: 'E-commerce Website',
       category: 'react',
-      image: './assets/images/Works1.jpeg',
-      github: 'https://github.com/',
-      demo: 'https://project-demo.com/',
+      image: './assets/images/screen.png.png',
+      demo: 'https://awesome-shop-flame.vercel.app/',
       description: 'A full-featured e-commerce platform built with React.',
-      tags: ['React', 'Context API', 'API']
+      tags: ['React', 'Context API', 'CSS']
     },
     {
       id: 2,
-      title: 'Shipping Website',
+      title: 'Payment Portal',
       category: 'react',
-      image: './assets/images/Works2.png',
-      github: 'https://github.com/br-1-ght/Shipping',
-      demo: 'https://xpresscargologisticsllc.netlify.app',
-      description: 'A responsive shipping website built with REACT.',
-      tags: ['REACT', 'API']
+      image: './assets/images/stripe.png',
+      demo: 'https://mystrp.netlify.app/',
+      description: 'A featured payment website built with React.',
+      tags: ['React','Context API', 'CSS']
+    },
+    {
+      id: 3,
+      title: 'Text to Speech',
+      category: 'javascript',
+      image: './assets/images/speech.png',
+      demo: 'https://text-to-speech-seven-tau.vercel.app/',
+      description: 'A Text to Speech platform built with Javascripts.',
+      tags: ['javaScript']
+    },
+     {
+      id: 4,
+      title: 'Brand Stategy',
+      category: 'react',
+      image: './assets/images/brands.png',
+      demo: 'https://brand-strategist-portfolio.vercel.app/',
+      description: 'A Brand Strategist website built with React and Typescripts.',
+      tags: ['React', 'Typescripts']
     },
   ];
 
@@ -54,13 +70,9 @@ const Projects = () => {
             onClick={() => setFilter('javascript')}
           >
             JavaScript
+            
           </button>
-          <button 
-            className={`filter-btn ${filter === 'node' ? 'active' : ''}`}
-            onClick={() => setFilter('node')}
-          >
-            Node.js
-          </button>
+          
         </div>
         
         <div className="projects-grid">
@@ -71,10 +83,10 @@ const Projects = () => {
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <i class="bi bi-github"></i>
+                      <i className="bi bi-github"></i>
                     </a>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <i class="bi bi-link"></i>
+                      <i className="bi bi-link"></i>
                     </a>
                   </div>
                 </div>

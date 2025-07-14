@@ -7,12 +7,12 @@ const About = () => {
         <h2 className="section-title">About <span>Me</span></h2>
         <div className="about-content">
           <div className="about-image">
-            <img src="./assets/images/me4.jpg" alt="Igwe Bright Sunday" />
+            <img src="./assets/images/pics.jpg" alt="" />
           </div>
           <div className="about-text">
             <h3>Frontend Developer based in Nigeria</h3>
             <p>
-              Hello! I'm Igwe Bright Sunday, a passionate Frontend Developer with expertise in creating responsive and user-friendly web applications. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+              Hello! I'm Simile Gift Yagba, a passionate Frontend Developer with expertise in creating responsive and user-friendly web applications. I enjoy turning complex problems into simple, beautiful and intuitive designs.
             </p>
             <p>
               My main area of expertise is frontend development, building small to medium web applications, custom plugins, features, animations, and coding interactive layouts. I also have experience working with backend technologies.
@@ -23,11 +23,11 @@ const About = () => {
             <div className="about-info">
               <div className="info-item">
                 <span className="info-title">Name:</span>
-                <span className="info-value">Igwe Bright Sunday</span>
+                <span className="info-value">Simile Gift Yagba</span>
               </div>
               <div className="info-item">
                 <span className="info-title">Email:</span>
-                <span className="info-value">brightigwe417@gmail.com</span>
+                <span className="info-value">Simile.gift1234@gmail.com</span>
               </div>
               <div className="info-item">
                 <span className="info-title">Location:</span>
@@ -35,12 +35,12 @@ const About = () => {
               </div>
               <div className="info-item">
                 <span className="info-title">Experience:</span>
-                <span className="info-value">2 Years</span>
+                <span className="info-value">3 Years</span>
               </div>
             </div>
             <div className="about-buttons">
-              <a href="./myresume.pdf" download className="btn">Download CV</a>
-              <a href="mailto:brightigwe417@gmail.com" className="btn secondary-btn">Hire Me</a>
+              <a href="./YAGBA SIMILE.pdf" download className="btn">Download CV</a>
+              <a href="mailto:Simile.gift1234@gmail.com" className="btn secondary-btn">Hire Me</a>
             </div>
           </div>
         </div>

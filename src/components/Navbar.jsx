@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
-          <a href="#home">BRIGHT.</a>
+          <a href="#home">SIMILE.</a>
         </div>
         
         <div className={`menu-icon ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>

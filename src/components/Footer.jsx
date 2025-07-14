@@ -11,16 +11,16 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="scroll-top" onClick={scrollToTop}>
-        <i class="bi bi-caret-up-fill"></i>
+        <i className="bi bi-caret-up-fill"></i>
       </div>
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h2>BRIGHT.</h2>
+            <h2>SIMILE.</h2>
             <p>Frontend Developer</p>
           </div>
           <div className="footer-copyright">
-            <p>&copy; {new Date().getFullYear()} Igwe Bright Sunday. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Simile Gift Yagba. All Rights Reserved.</p>
           </div>
         </div>
       </div>

@@ -1,25 +1,43 @@
+import { FaCss3Alt, FaFigma, FaGit, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa6';
 import '../styles/Skill.css';
+import { DiMongodb } from 'react-icons/di';
+import { RiTailwindCssLine } from 'react-icons/ri';
 
 const Skills = () => {
   const technicalSkills = [
-    { name: 'HTML', icon: 'g', level: 95 },
-    { name: 'CSS', icon: 'f', level: 90 },
-    { name: 'JavaScript', icon: 'd', level: 85 },
-    { name: 'React', icon: 's', level: 80 },
-    { name: 'Node.js', icon: 'a', level: 20 },
-    { name: 'Tailwind CSS', icon: 'x', level: 90 },
-    { name: 'MongoDB', icon: 'v', level: 50 },
-    { name: 'Git', icon: 'n', level: 85 },
-    { name: 'Figma', icon: 'm', level: 85 },
+    { name: 'HTML 5', icon: FaHtml5, level: 100 },
+    { name: 'CSS', icon: FaCss3Alt, level: 90 },
+    { name: 'JavaScript', icon: FaJs, level: 85 },
+    { name: 'React', icon: FaReact, level: 85 },
+    { name: 'Node.js', icon: FaNodeJs, level: 20 },
+    { name: 'Tailwind CSS', icon: RiTailwindCssLine, level: 90 },
+    { name: 'MongoDB', icon: DiMongodb, level: 50 },
+    { name: 'Git', icon: FaGit, level: 85 },
+    { name: 'Figma', icon: FaFigma, level: 85 },
   ];
 
+
+
+//   { name: 'HTML 5', icon: 'fi fi-brands-html5', level: 100 },
+//   { name: 'CSS', icon: 'fi fi-brands-css3-alt', level: 90 },
+//   { name: 'JavaScript', icon: 'fi fi-brands-js', level: 85 },
+//   { name: 'React', icon: 'fi fi-brands-react', level: 85 },
+//   { name: 'Node.js', icon: 'fi fi-brands-node-js', level: 20 },
+//   { name: 'Tailwind CSS', icon: 'fi fi-brands-tailwindcss', level: 90 },
+//   { name: 'MongoDB', icon: 'fi fi-brands-mongodb', level: 50 },
+//   { name: 'Git', icon: 'fi fi-brands-git', level: 85 },
+//   { name: 'Figma', icon: 'fi fi-brands-figma', level: 85 }
+// ]
+
+
+
   const professionalSkills = [
-    { name: 'Communication', level: 90 },
-    { name: 'Teamwork', level: 95 },
-    { name: 'Problem Solving', level: 85 },
-    { name: 'Creativity', level: 80 },
-    { name: 'Project Management', level: 75 },
-    { name: 'Time Management', level: 85 },
+    { name: 'Communication', level: 95 },
+    { name: 'Teamwork', level: 90 },
+    { name: 'Problem Solving', level: 90 },
+    { name: 'Creativity', level: 85 },
+    { name: 'Project Management', level: 85 },
+    { name: 'Time Management', level: 90 },
   ];
 
   return (
@@ -31,10 +49,12 @@ const Skills = () => {
           <div className="technical-skills">
             <h3>Technical Skills</h3>
             <div className="skills-grid">
-              {technicalSkills.map((skill, index) => (
+              {technicalSkills.map((skill, index) => {
+                const Icon = skill.icon
+                return (
                 <div className="skill-item" key={index}>
                   <div className="skill-icon">
-                    {skill.icon}
+                    {<Icon/>}
                   </div>
                   <div className="skill-info">
                     <h4>{skill.name}</h4>
@@ -48,7 +68,8 @@ const Skills = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
           

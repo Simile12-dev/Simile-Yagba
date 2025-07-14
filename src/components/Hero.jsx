@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Hi, I am <span>IGWE BRIGHT SUNDAY</span></h1>
+            <h1>Hi, I am <span>Mosimileoluwa Gift Yagba</span></h1>
             <h2>Frontend Developer</h2>
             <p>I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive.</p>
             <div className="hero-buttons">
@@ -15,20 +15,17 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-socials">
-            <a href="https://github.com/br-1-ght" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-github"></i>
+            <a href="https://www.linkedin.com/in/simile-gift-71b71220a" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-linkedin"></i>
             </a>
-            <a href="https://www.linkedin.com/in/bright-igwe-a705ba361" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-twitter"></i>
+            <a href="https://wa.me/+2349038906319" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-whatsapp"></i>
             </a>
           </div>
         </div>
         <div className="hero-image">
           <div className="image-container">
-            <img src="./assets/images/bright1.jpg" alt="Igwe Bright" />
+            { <img src="./assets/images/sims.jpg" alt="" />}
           </div>
         </div>
       </div>
