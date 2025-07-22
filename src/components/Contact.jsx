@@ -38,7 +38,7 @@ const Contact = () => {
         setFormStatus({
           submitted: true,
           success: true,
-          message: "Your message has been sent successfully!",
+          message: "Your message has been sent successfully.!",
         });
 
         setFormData({
