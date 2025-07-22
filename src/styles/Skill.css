@@ -1,271 +1,277 @@
-/* Skills.css */
+/* --- Base Styles --- */
 .skills {
-  background-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    padding: 60px 0; /* Add some vertical padding for better visual spacing */
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-color);
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+/* --- Skills Container Layout --- */
 .skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between technical and professional sections */
 }
 
+/* --- Section Headings --- */
 .technical-skills h3,
 .professional-skills h3 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  text-align: center;
-  color: var(--text-color);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-color);
 }
 
+/* --- Technical Skills Grid --- */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
 }
 
 .skill-item {
-  background-color: var(--tertiary-color);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .skill-icon {
-  font-size: 30px;
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(117, 98, 224, 0.1);
-  border-radius: 50%;
+    font-size: 32px;
+    color: var(--primary-color); /* Uses primary color for icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px; /* Fixed width for consistent alignment */
+    height: 55px;
+    background-color: rgba(117, 98, 224, 0.15); /* Slightly darker background for icon circle */
+    border-radius: 50%;
 }
 
 .skill-info {
-  flex: 1;
+    flex: 1; /* Allows skill info to take remaining space */
 }
 
 .skill-info h4 {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
 }
 
+/* --- Progress Bar Styles (Technical Skills) --- */
 .progress-bar {
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.15); /* Lighter track */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
 }
 
 .progress {
-  height: 100%;
-  background-color: var(--primary-color);
-  border-radius: 4px;
-  position: relative;
+    height: 100%;
+    background-color: var(--primary-color); /* Uses primary color for progress */
+    border-radius: 5px;
+    width: 0%; /* Initial state for animation */
+    transition: width 1.5s ease-out; /* Smooth animation */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px; /* Padding for text */
+    box-sizing: border-box;
+}
+
+/* Animation trigger class for technical skills */
+.progress.animate {
+    /* The width property is set inline by React,
+       this class simply enables the transition. */
 }
 
 .progress-text {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-size: 12px;
-  color: var(--light-text);
+    position: absolute; /* Position text relative to the progress bar */
+    right: 5px; /* Adjust right position as needed */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the text */
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light-text); /* Light text color for contrast */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Add a slight shadow for readability */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease 1s; /* Fade in after bar animation */
 }
 
+.progress.animate .progress-text {
+    opacity: 1; /* Show text when animated */
+}
+
+
+/* --- Professional Skills Layout --- */
 .prof-skills-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between professional skill items */
 }
 
 .prof-skill-item {
-  margin-bottom: 25px;
+    background-color: var(--tertiary-color);
+    padding: 18px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.prof-skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
 .prof-skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; /* Align text baselines */
+    margin-bottom: 10px;
 }
 
 .prof-skill-info h4 {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0; /* Remove default margin */
 }
 
 .prof-skill-info span {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--primary-color);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-color); /* Uses primary color for percentage */
 }
 
+/* --- Progress Bar Styles (Professional Skills) --- */
 .prof-progress-bar {
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .prof-progress {
-  height: 100%;
-  background-color: var(--primary-color);
-  border-radius: 4px;
+    height: 100%;
+    background-color: var(--primary-color); /* Uses primary color for progress */
+    border-radius: 5px;
+    width: 0%; /* Initial state for animation */
+    transition: width 1.5s ease-out; /* Smooth animation */
 }
 
-/* Add or modify these styles in Skill.css */
-
-.progress-bar, .prof-progress-bar {
-  /* Ensure a base style for the bar track */
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  height: 10px;
-  overflow: hidden; /* Important to hide the bar when width is 0 */
-}
-
-.progress, .prof-progress {
-  height: 100%;
-  background-color: #007bff; /* Example color, adjust as needed */
-  border-radius: 5px;
-  width: 0%; /* Start at 0% width */
-  transition: width 1.5s ease-out; /* Smooth transition for the width */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Align text to the end of the bar */
-  padding-right: 5px; /* Spacing for the text */
-  box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.progress.animate, .prof-progress.animate {
-  /* This class will be applied when animateSkills is true,
-     and the transition will smoothly animate the width
-     from the initial 0% to the specified level. */
-}
-
-.progress-text {
-  color: white; /* Color for the percentage text */
-  font-size: 0.75em; /* Adjust font size as needed */
-  font-weight: bold;
-}
-/* Update or add these styles in Skill.css */
-
-.progress-bar,
-.prof-progress-bar {
-  background-color: #e0e0e0; /* Light grey track for the bar */
-  border-radius: 5px;
-  height: 10px;
-  overflow: hidden;
-}
-
-.progress,
-.prof-progress {
-  height: 100%;
-  background-color: #4f46e5; /* Indigo color for the progress bar */
-  border-radius: 5px;
-  width: 0%; /* Start at 0% width for animation */
-  transition: width 1.5s ease-out; /* Smooth transition for the width */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 5px;
-  box-sizing: border-box;
-}
-
-/* This class is added by React when the section is in view */
-.progress.animate,
+/* Animation trigger class for professional skills */
 .prof-progress.animate {
-  /* When the 'animate' class is present, the width will transition
-     from 0% to the value set by the inline style in React. */
+    /* The width property is set inline by React,
+       this class simply enables the transition. */
 }
 
-.progress-text {
-  color: white;
-  font-size: 0.75em;
-  font-weight: bold;
+/* --- Responsive Styles --- */
+@media (min-width: 769px) {
+    .skills-container {
+        flex-direction: row; /* Side-by-side on larger screens */
+        justify-content: space-between;
+    }
+
+    .technical-skills,
+    .professional-skills {
+        flex: 1; /* Each takes equal width */
+        max-width: 48%; /* Adjust as needed */
+    }
+
+    .prof-skills-container {
+        display: grid; /* Grid layout for professional skills on larger screens */
+        grid-template-columns: 1fr; /* Stack them in a single column */
+    }
 }
 
-/* Ensure your existing layout styles are present */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
 
-.prof-skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.skill-item,
-.prof-skill-item {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex; /* For technical skills, to align icon and info */
-  align-items: center;
-}
-
-.skill-icon {
-  font-size: 2.5em; /* Adjust icon size */
-  margin-right: 15px;
-  color: #4f46e5; /* Indigo color for icons */
-}
-
-.skill-info,
-.prof-skill-info {
-  flex-grow: 1; /* Allows skill info to take available space */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px; /* Adjust spacing as needed */
-}
-
-.skill-info h4,
-.prof-skill-info h4 {
-  margin: 0;
-  font-size: 1em;
-}
-
-.prof-skill-info span {
-  font-weight: bold;
-  color: #4f46e5; /* Indigo color for professional skill percentages */
-}
-
-/* Responsive Styles */
 @media (max-width: 992px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
-  .prof-skills-container {
-    grid-template-columns: 1fr;
-  }
+    .skills-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        gap: 40px;
+    }
+    
+    .technical-skills,
+    .professional-skills {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .technical-skills h3,
+    .professional-skills h3 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .prof-skills-container {
+        grid-template-columns: 1fr; /* Stack professional skills */
+    }
 }
 
 @media (max-width: 576px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .technical-skills h3,
-  .professional-skills h3 {
-    font-size: 20px;
-  }
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    
+    .technical-skills h3,
+    .professional-skills h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .skill-item {
+        flex-direction: column; /* Stack icon and info vertically */
+        text-align: center;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .skill-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .skill-info h4 {
+        margin-bottom: 5px;
+    }
+
+    .progress-text {
+        top: -18px; /* Adjust position for stacked layout */
+        right: 0;
+        transform: none;
+    }
 }
