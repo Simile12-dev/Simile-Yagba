@@ -1,15 +1,48 @@
+import React, { useEffect, useRef } from 'react';
 import '../styles/About.css';
 
 const About = () => {
+  const aboutRef = useRef(null);
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    const elements = [titleRef.current, imageRef.current, textRef.current];
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" ref={aboutRef}>
       <div className="container">
-        <h2 className="section-title">About <span>Me</span></h2>
+        <h2 className="section-title fade-up" ref={titleRef}>About <span>Me</span></h2>
         <div className="about-content">
-          <div className="about-image">
+          <div className="about-image fade-up" ref={imageRef}>
             <img src="./assets/images/simile.jpg" alt="" />
           </div>
-          <div className="about-text">
+          <div className="about-text fade-up" ref={textRef}>
             <h3>Frontend Developer based in Nigeria</h3>
             <p>
               Hello! I'm Simile Gift Yagba, a passionate Frontend Developer with expertise in creating responsive and user-friendly web applications. I enjoy turning complex problems into simple, beautiful and intuitive designs.
