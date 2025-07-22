@@ -126,6 +126,58 @@
   border-radius: 4px;
 }
 
+/* Add or modify these styles in Skill.css */
+
+.progress-bar, .prof-progress-bar {
+  /* Ensure a base style for the bar track */
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden; /* Important to hide the bar when width is 0 */
+}
+
+.progress, .prof-progress {
+  height: 100%;
+  background-color: #007bff; /* Example color, adjust as needed */
+  border-radius: 5px;
+  width: 0%; /* Start at 0% width */
+  transition: width 1.5s ease-out; /* Smooth transition for the width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align text to the end of the bar */
+  padding-right: 5px; /* Spacing for the text */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.progress.animate, .prof-progress.animate {
+  /* This class will be applied when animateSkills is true,
+     and the transition will smoothly animate the width
+     from the initial 0% to the specified level. */
+}
+
+.progress-text {
+  color: white; /* Color for the percentage text */
+  font-size: 0.75em; /* Adjust font size as needed */
+  font-weight: bold;
+}
+
+/* Ensure your existing .skill-item and .prof-skill-item styles are compatible */
+/* Example basic styles if they are missing */
+.skill-item, .prof-skill-item {
+  margin-bottom: 15px;
+}
+
+.skill-info, .prof-skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.skill-info h4, .prof-skill-info h4 {
+  margin: 0;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .skills-grid {
