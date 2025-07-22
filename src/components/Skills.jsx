@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'; // Import useEffect, useRef, and useState
+import React, { useEffect, useRef, useState } from 'react';
 import { FaCss3Alt, FaFigma, FaGit, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa6';
 import '../styles/Skill.css';
 import { DiMongodb } from 'react-icons/di';
 import { RiTailwindCssLine } from 'react-icons/ri';
 
 const Skills = () => {
-  const [animateSkills, setAnimateSkills] = useState(false); // New state to control animation
-  const skillsRef = useRef(null); // Ref to observe the section
+  const [animateSkills, setAnimateSkills] = useState(false);
+  const skillsRef = useRef(null);
 
   const technicalSkills = [
     { name: 'HTML 5', icon: FaHtml5, level: 100 },
@@ -34,12 +34,15 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setAnimateSkills(true);
-            observer.unobserve(entry.target); // Stop observing once in view
+            // Add a small delay to ensure smooth animation
+            setTimeout(() => {
+              setAnimateSkills(true);
+            }, 100);
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is visible
+      { threshold: 0.3 }
     );
 
     if (skillsRef.current) {
@@ -51,10 +54,10 @@ const Skills = () => {
         observer.unobserve(skillsRef.current);
       }
     };
-  }, []); // Run only once on component mount
+  }, []);
 
   return (
-    <section id="skills" className="skills" ref={skillsRef}> {/* Attach ref here */}
+    <section id="skills" className="skills" ref={skillsRef}>
       <div className="container">
         <h2 className="section-title">My <span>Skills</span></h2>
         
@@ -67,14 +70,17 @@ const Skills = () => {
                 return (
                   <div className="skill-item" key={index}>
                     <div className="skill-icon">
-                      {<Icon/>}
+                      <Icon />
                     </div>
                     <div className="skill-info">
                       <h4>{skill.name}</h4>
                       <div className="progress-bar">
                         <div 
-                          className={`progress ${animateSkills ? 'animate' : ''}`} // Conditionally add 'animate' class
-                          style={{ width: animateSkills ? `${skill.level}%` : '0%' }} // Animate from 0%
+                          className={`progress ${animateSkills ? 'animate' : ''}`}
+                          style={{ 
+                            width: animateSkills ? `${skill.level}%` : '0%',
+                            transitionDelay: `${index * 0.1}s` // Staggered animation
+                          }}
                         >
                           <span className="progress-text">{skill.level}%</span>
                         </div>
@@ -97,8 +103,11 @@ const Skills = () => {
                   </div>
                   <div className="prof-progress-bar">
                     <div 
-                      className={`prof-progress ${animateSkills ? 'animate' : ''}`} // Conditionally add 'animate' class
-                      style={{ width: animateSkills ? `${skill.level}%` : '0%' }} // Animate from 0%
+                      className={`prof-progress ${animateSkills ? 'animate' : ''}`}
+                      style={{ 
+                        width: animateSkills ? `${skill.level}%` : '0%',
+                        transitionDelay: `${index * 0.1}s` // Staggered animation
+                      }}
                     ></div>
                   </div>
                 </div>

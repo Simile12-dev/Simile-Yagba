@@ -1,7 +1,7 @@
 /* --- Base Styles --- */
 .skills {
     background-color: var(--secondary-color);
-    padding: 60px 0; /* Add some vertical padding for better visual spacing */
+    padding: 60px 0;
 }
 
 .container {
@@ -26,7 +26,7 @@
 .skills-container {
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Space between technical and professional sections */
+    gap: 60px;
 }
 
 /* --- Section Headings --- */
@@ -42,7 +42,7 @@
 /* --- Technical Skills Grid --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -54,28 +54,28 @@
     align-items: center;
     gap: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
     font-size: 32px;
-    color: var(--primary-color); /* Uses primary color for icons */
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 55px; /* Fixed width for consistent alignment */
+    min-width: 55px;
     height: 55px;
-    background-color: rgba(117, 98, 224, 0.15); /* Slightly darker background for icon circle */
+    background-color: rgba(117, 98, 224, 0.15);
     border-radius: 50%;
 }
 
 .skill-info {
-    flex: 1; /* Allows skill info to take remaining space */
+    flex: 1;
 }
 
 .skill-info h4 {
@@ -88,7 +88,7 @@
 /* --- Progress Bar Styles (Technical Skills) --- */
 .progress-bar {
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.15); /* Lighter track */
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -96,46 +96,45 @@
 
 .progress {
     height: 100%;
-    background-color: var(--primary-color); /* Uses primary color for progress */
+    background-color: var(--primary-color);
     border-radius: 5px;
-    width: 0%; /* Initial state for animation */
-    transition: width 1.5s ease-out; /* Smooth animation */
+    width: 0%;
+    transition: width 2s ease-out;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 8px; /* Padding for text */
+    padding-right: 8px;
     box-sizing: border-box;
+    position: relative;
 }
 
-/* Animation trigger class for technical skills */
+/* Enhanced animation for technical skills */
 .progress.animate {
-    /* The width property is set inline by React,
-       this class simply enables the transition. */
+    /* Width is set via inline styles in React */
 }
 
 .progress-text {
-    position: absolute; /* Position text relative to the progress bar */
-    right: 5px; /* Adjust right position as needed */
+    position: absolute;
+    right: 8px;
     top: 50%;
-    transform: translateY(-50%); /* Vertically center the text */
+    transform: translateY(-50%);
     font-size: 12px;
     font-weight: 600;
-    color: var(--light-text); /* Light text color for contrast */
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Add a slight shadow for readability */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease 1s; /* Fade in after bar animation */
+    color: var(--light-text);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.8s ease 1.5s; /* Fade in after bar animation */
 }
 
 .progress.animate .progress-text {
-    opacity: 1; /* Show text when animated */
+    opacity: 1;
 }
-
 
 /* --- Professional Skills Layout --- */
 .prof-skills-container {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Space between professional skill items */
+    gap: 25px;
 }
 
 .prof-skill-item {
@@ -151,11 +150,10 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-
 .prof-skill-info {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* Align text baselines */
+    align-items: baseline;
     margin-bottom: 10px;
 }
 
@@ -163,13 +161,13 @@
     font-size: 18px;
     font-weight: 600;
     color: var(--text-color);
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 .prof-skill-info span {
     font-size: 15px;
     font-weight: 700;
-    color: var(--primary-color); /* Uses primary color for percentage */
+    color: var(--primary-color);
 }
 
 /* --- Progress Bar Styles (Professional Skills) --- */
@@ -182,37 +180,37 @@
 
 .prof-progress {
     height: 100%;
-    background-color: var(--primary-color); /* Uses primary color for progress */
+    background-color: var(--primary-color);
     border-radius: 5px;
-    width: 0%; /* Initial state for animation */
-    transition: width 1.5s ease-out; /* Smooth animation */
+    width: 0%;
+    transition: width 2s ease-out; /* Smooth animation */
+    position: relative;
 }
 
-/* Animation trigger class for professional skills */
+/* Enhanced animation for professional skills */
 .prof-progress.animate {
-    /* The width property is set inline by React,
-       this class simply enables the transition. */
+    /* Width is set via inline styles in React */
 }
 
 /* --- Responsive Styles --- */
 @media (min-width: 769px) {
     .skills-container {
-        flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: space-between;
+        flex-direction: column; /* Keep vertical layout on all screen sizes */
+        gap: 60px;
     }
 
     .technical-skills,
     .professional-skills {
-        flex: 1; /* Each takes equal width */
-        max-width: 48%; /* Adjust as needed */
+        flex: 1;
+        max-width: 100%; /* Full width for both sections */
     }
 
     .prof-skills-container {
-        display: grid; /* Grid layout for professional skills on larger screens */
-        grid-template-columns: 1fr; /* Stack them in a single column */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for professional skills on larger screens */
+        gap: 25px;
     }
 }
-
 
 @media (max-width: 992px) {
     .skills-grid {
@@ -222,13 +220,13 @@
 
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column; /* Stack vertically on smaller screens */
+        flex-direction: column;
         gap: 40px;
     }
     
     .technical-skills,
     .professional-skills {
-        max-width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
     }
 
     .technical-skills h3,
@@ -238,13 +236,13 @@
     }
 
     .prof-skills-container {
-        grid-template-columns: 1fr; /* Stack professional skills */
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 576px) {
     .skills-grid {
-        grid-template-columns: 1fr; /* Single column on very small screens */
+        grid-template-columns: 1fr;
     }
     
     .technical-skills h3,
@@ -254,7 +252,7 @@
     }
 
     .skill-item {
-        flex-direction: column; /* Stack icon and info vertically */
+        flex-direction: column;
         text-align: center;
         gap: 10px;
         padding: 15px;
@@ -270,7 +268,7 @@
     }
 
     .progress-text {
-        top: -18px; /* Adjust position for stacked layout */
+        top: -18px;
         right: 0;
         transform: none;
     }
