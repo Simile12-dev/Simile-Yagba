@@ -126,6 +126,126 @@
   border-radius: 4px;
 }
 
+/* Add or modify these styles in Skill.css */
+
+.progress-bar, .prof-progress-bar {
+  /* Ensure a base style for the bar track */
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden; /* Important to hide the bar when width is 0 */
+}
+
+.progress, .prof-progress {
+  height: 100%;
+  background-color: #007bff; /* Example color, adjust as needed */
+  border-radius: 5px;
+  width: 0%; /* Start at 0% width */
+  transition: width 1.5s ease-out; /* Smooth transition for the width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align text to the end of the bar */
+  padding-right: 5px; /* Spacing for the text */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.progress.animate, .prof-progress.animate {
+  /* This class will be applied when animateSkills is true,
+     and the transition will smoothly animate the width
+     from the initial 0% to the specified level. */
+}
+
+.progress-text {
+  color: white; /* Color for the percentage text */
+  font-size: 0.75em; /* Adjust font size as needed */
+  font-weight: bold;
+}
+/* Update or add these styles in Skill.css */
+
+.progress-bar,
+.prof-progress-bar {
+  background-color: #e0e0e0; /* Light grey track for the bar */
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress,
+.prof-progress {
+  height: 100%;
+  background-color: #4f46e5; /* Indigo color for the progress bar */
+  border-radius: 5px;
+  width: 0%; /* Start at 0% width for animation */
+  transition: width 1.5s ease-out; /* Smooth transition for the width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+
+/* This class is added by React when the section is in view */
+.progress.animate,
+.prof-progress.animate {
+  /* When the 'animate' class is present, the width will transition
+     from 0% to the value set by the inline style in React. */
+}
+
+.progress-text {
+  color: white;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+/* Ensure your existing layout styles are present */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.prof-skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item,
+.prof-skill-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* For technical skills, to align icon and info */
+  align-items: center;
+}
+
+.skill-icon {
+  font-size: 2.5em; /* Adjust icon size */
+  margin-right: 15px;
+  color: #4f46e5; /* Indigo color for icons */
+}
+
+.skill-info,
+.prof-skill-info {
+  flex-grow: 1; /* Allows skill info to take available space */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+
+.skill-info h4,
+.prof-skill-info h4 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.prof-skill-info span {
+  font-weight: bold;
+  color: #4f46e5; /* Indigo color for professional skill percentages */
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .skills-grid {
